@@ -23,7 +23,7 @@ namespace Hotels.Controllers
             {
                 Id = new Guid("CBC1860B-51CC-4FA4-BD12-5A477E6304B7"),
                 RoomNumber = "201",
-                Price = 2500.0
+                Price = 2000.0
             }
         };
 
