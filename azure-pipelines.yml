@@ -47,4 +47,4 @@ steps:
   inputs:
     azureSubscription: 'My Azure'
     appName: 'cg-hotels'
-    package: $(System.DefaultWorkingDirectory)/**/*.zip
+    package: $(Build.ArtifactStagingDirectory)/**/*.zip
