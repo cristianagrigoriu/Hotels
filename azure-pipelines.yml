@@ -43,8 +43,12 @@ steps:
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
     
-- task: AzureWebApp@1
+- task: AzureRmWebAppDeployment@4
   inputs:
+    ConnectionType: 'AzureRM'
     azureSubscription: 'My Azure'
-    appName: 'cg-hotels'
-    package: $(Build.ArtifactStagingDirectory)/**/*.zip
+    appType: 'webApp'
+    WebAppName: 'cg-hotels'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'    
+
+
