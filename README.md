@@ -2,4 +2,4 @@
 
 # Hotels
 
-Hotel API
+[Hotel API](https://cg-hotels.azurewebsites.net/swagger/index.html)
