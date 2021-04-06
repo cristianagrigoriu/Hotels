@@ -28,14 +28,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
 - task: DotNetCoreCLI@2
   inputs:
     command: test
+  displayName: NUnit Test
 
 # ...
 # do this after you've built your app, near the end of your pipeline in most cases
@@ -46,6 +42,7 @@ steps:
     publishWebProjects: True
     arguments: '--configuration $(BuildConfiguration) --output $(System.DefaultWorkingDirectory)'
     zipAfterPublish: True
+  displayName: Publish zip
     
 - task: AzureRmWebAppDeployment@4
   inputs:
@@ -53,6 +50,7 @@ steps:
     azureSubscription: 'My Azure'
     appType: 'webApp'
     WebAppName: 'cg-hotels'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'    
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip' 
+  displayName: Deploy to web app
 
 
