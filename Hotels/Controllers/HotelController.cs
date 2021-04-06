@@ -30,8 +30,13 @@ namespace Hotels.Controllers
                 Id = new Guid("28AEA96E-1979-4278-AED3-BE3AD91A62C6"),
                 RoomNumber = "202",
                 Price = 2002.0
+            },
+            new Room
+            {
+                Id = new Guid("64AA5051-EDCC-4B09-A4FA-15AAC6E29842"),
+                RoomNumber = "203",
+                Price = 2002.5
             }
-
         };
 
         [HttpGet]
