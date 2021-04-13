@@ -16,7 +16,7 @@ namespace HotelsTest
         public void When_getting_all_rooms_Then_room_count_should_be_3()
         {
             var hotelController = new HotelController();
-            hotelController.GetAllRooms().Count().Should().Be(3);
+            hotelController.GetAllRooms().Count().Should().Be(4);
         }
     }
 }
